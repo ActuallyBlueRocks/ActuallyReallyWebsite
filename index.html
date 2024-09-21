@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actually Really Website</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0026ff, #000000);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #name {
+            font-size: 48px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: dropDown 2s cubic-bezier(0.23, 1, 0.32, 1) forwards, spinOut 2s 3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        #info {
+            display: none;
+            opacity: 0;
+            font-size: 24px;
+            text-align: left;
+            position: absolute;
+            top: -25px;
+            left: 10px;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes dropDown {
+            from {
+                top: -100px;
+            }
+            to {
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @keyframes spinOut {
+            0% {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                top: -100px;
+                transform: translate(-50%, -50%) rotate(720deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButtons {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rainbow {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: blue; }
+            71% { color: indigo; }
+            85% { color: violet; }
+            100% { color: red; }
+        }
+
+        body.show-info #info {
+            display: block;
+        }
+
+        body.show-info #name {
+            display: none;
+        }
+
+        .rainbow {
+            animation: rainbow 3s linear infinite;
+        }
+
+        .buttons {
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #0044cc;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInButtons 1.5s forwards;
+        }
+
+        .buttons button:hover {
+            background-color: #0066ff;
+        }
+
+        .buttons button:active {
+            background-color: #003399;
+        }
+
+        body.show-buttons .buttons {
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <audio id="introSound" src="intro animation.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="waitiknowthissong.wav" preload="auto" loop></audio>
+    
+    <div id="name">ActuallyBlueRocks (Dakota)</div>
+    <div id="info">
+        <h1>Hey guys!!!</h1>
+        <p>I'm ABR, also known as ActuallyBlueRocks.</p>
+        <p>Some other people know me as Dakota.</p>
+        <p>I compose, draw, and do some other one-off things like coding this <span class="rainbow">website</span>. Pretty cool, right?</p>
+        <p>I even composed the song you're hearing right now!</p>
+    </div>
+
+    <div class="buttons">
+        <button onclick="window.location.href='abr.html'">whats a ABR??</button>
+        <button onclick="window.location.href='no.html'">can i please email you all of my weird fantasies????</button>
+        <button onclick="window.location.href='wack.html'">join the wack.</button>
+    </div>
+
+    <script>
+        document.getElementById('introSound').play();
+
+        setTimeout(function() {
+            document.body.classList.add('show-info');
+            document.getElementById('info').style.animation = 'fadeIn 2s forwards';
+
+            document.getElementById('backgroundMusic').play();
+
+            setTimeout(function() {
+                document.body.classList.add('show-buttons');
+                document.querySelectorAll('.buttons button').forEach((button, index) => {
+                    button.style.animationDelay = `${index * 0.3}s`;
+                    button.style.animation = 'fadeInButtons 1.5s forwards';
+                });
+            }, 2000);
+        }, 5000);
+    </script>
+</body>
+</html>

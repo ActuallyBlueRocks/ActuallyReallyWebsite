@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oh Mr. ABR, tell me more.</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #000000);
+            color: #eaeaea;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: fadeIn 2s;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+            animation: fadeIn 2s;
+        }
+
+        .project {
+            background: #0f3460;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            animation: fadeIn 2s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" src="abr.wav" preload="auto" loop autoplay></audio>
+    
+    <h1>Whats a ABR?</h1>
+    <p>The name ActuallyBlueRocks originated from a random username website.</p>
+    <p>I didn't necessarily enjoy the name it gave me, ActuallyRocks.</p>
+    <p>So I added the word blue to it, and now its stuck with me forever.</p>
+    
+    <div class="project">
+        <a href="https://gamebanana.com/mods/500996" target="_blank" style="color: rgb(255, 158, 47); text-decoration: none;">
+            <h2>AFPP</h2>
+        </a>
+        <p>AFPP, also know as Alans Fast Paced Place, is a baldi fangame/mod.</p>
+        <p>Originally the mod had been based off a fnf song called "Bruhing!".</p>
+        <p>And with some backlash from the actual creators of faldi, faldi was changed.</p>
+        <p>Thus alan was born.</p>
+    </div>
+    
+    <div class="project">
+        <a href="https://gamebanana.com/mods/541189" target="_blank" style="color: rgb(0, 183, 255); text-decoration: none;">
+            <h2>UDABM</h2>
+        </a>
+        <p>Untitled Dave And Bambi Mod is a fnf mod created by the one and only <a href="#" id="soapyLink" style="color: rgb(255, 136, 0); text-decoration: none;">SoapyDX</a>.</p>
+        <p>UDABM is a compilation mod based off the dave and bambi community.</p>
+        <p>Me and sabel (soapyDX) both put tons of time into the mod and we'd appreciate it if you downloaded it.</p>
+    </div>
+    
+    <div class="project">
+        <a href="https://gamebanana.com/mods/531345" target="_blank" style="color: rgb(255, 238, 0); text-decoration: none;">
+            <h2>Bart FNF mod Simpson</h2>
+        </a>
+        <p>Bart FNF mod Simpson is a shitpost based off a unity game my friend sabel made.</p>
+        <p>In the unity game there was a random chance for bart to show up, play a sine wave sound, and say a random clip</p>
+        <p>from the simpsons hit and run game.</p>
+        <p>So I turned that into a fnf mod.</p>
+    </div>
+
+    <script>
+        const links = [
+            "https://www.youtube.com/@Sabelz",
+            "https://x.com/SoapyDX",
+            "https://gamebanana.com/members/1789984"
+        ];
+        let currentLinkIndex = 0;
+
+        document.getElementById('soapyLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.open(links[currentLinkIndex], '_blank');
+            currentLinkIndex = (currentLinkIndex + 1) % links.length;
+        });
+    </script>
+</body>
+</html>

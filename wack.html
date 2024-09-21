@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHAT THE WACK???</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff0000, #00ff00, #0000ff);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow: hidden;
+            position: relative;
+            animation: bodyShake 0.5s infinite, rapidColorChange 0.1s infinite;
+        }
+
+        @keyframes bodyShake {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(2deg) scale(1.05); }
+            50% { transform: rotate(-2deg) scale(1.1); }
+            75% { transform: rotate(1deg) scale(1.05); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        @keyframes rapidColorChange {
+            0% { background: linear-gradient(135deg, #ff0000, #00ff00, #0000ff); }
+            25% { background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00); }
+            50% { background: linear-gradient(135deg, #ffff00, #ff00ff, #00ff00); }
+            75% { background: linear-gradient(135deg, #00ff00, #0000ff, #ff0000); }
+            100% { background: linear-gradient(135deg, #ff0000, #00ff00, #0000ff); }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+            animation: spinContainer 5s linear infinite reverse;
+        }
+
+        @keyframes spinContainer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .crazy-text {
+            font-size: 150px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 3px 3px lime, -3px -3px cyan, 5px 5px magenta;
+            transform: rotate(5deg);
+            position: absolute;
+            animation: bounce 3s ease-in-out infinite, textGlitch 0.2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(-20px) rotate(15deg); }
+        }
+
+        @keyframes textGlitch {
+            0% { text-shadow: 2px 2px red, -2px -2px blue; }
+            25% { text-shadow: -5px 5px lime, 5px -5px yellow; }
+            50% { text-shadow: 0px 0px pink, 0px 0px cyan; }
+            75% { text-shadow: -10px 5px black, 5px -10px white; }
+            100% { text-shadow: 3px 3px red, -3px -3px blue; }
+        }
+
+        .stars {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: radial-gradient(circle, #ffffff, rgba(255, 255, 255, 0.5));
+            border-radius: 50%;
+            animation: starTwinkle 3s infinite ease-in-out alternate;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+        }
+
+        .flying-text {
+            font-size: 60px;
+            font-weight: bold;
+            position: absolute;
+            color: #00ff00;
+            animation: flyText 6s infinite;
+        }
+
+        @keyframes flyText {
+            0% { left: -200px; top: 100px; transform: rotate(0deg); }
+            25% { left: 50%; top: 25%; transform: rotate(180deg); }
+            50% { left: 90%; top: 50%; transform: rotate(360deg); }
+            75% { left: 40%; top: 75%; transform: rotate(540deg); }
+            100% { left: -200px; top: 100px; transform: rotate(720deg); }
+        }
+
+        .flashing-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 10px solid transparent;
+            animation: borderFlash 1s infinite;
+        }
+
+        @keyframes borderFlash {
+            0% { border-color: red; }
+            25% { border-color: blue; }
+            50% { border-color: green; }
+            75% { border-color: yellow; }
+            100% { border-color: red; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flashing-border"></div>
+
+    <div class="container">
+        <div class="crazy-text" style="animation-delay: 0s;">HELP</div>
+        <div class="crazy-text" style="animation-delay: 0.5s;">HELP ME!!!!!!!</div>
+        <div class="crazy-text" style="animation-delay: 1s;">DUDE</div>
+        <div class="crazy-text" style="animation-delay: 1.5s;">download phils 3D blast on gamebanana</div>
+    </div>
+
+    <div class="stars" style="top: 10%; left: 20%; animation-duration: 2s;"></div>
+    <div class="stars" style="top: 30%; left: 60%; animation-duration: 3s;"></div>
+    <div class="stars" style="top: 50%; left: 10%; animation-duration: 4s;"></div>
+    <div class="stars" style="top: 70%; left: 80%; animation-duration: 1.5s;"></div>
+    <div class="stars" style="top: 90%; left: 40%; animation-duration: 2.5s;"></div>
+
+    <div class="flying-text" style="animation-delay: 0s;">hi ranger</div>
+    <div class="flying-text" style="animation-delay: 1s;">IM HAVING A SEIZURE</div>
+    <div class="flying-text" style="animation-delay: 2s;">IM GONNA PASS OUT</div>
+    <div class="flying-text" style="animation-delay: 3s;">download alans fast paced place on gamebanana</div>
+
+    <audio autoplay loop>
+        <source src="im gonna cry.wav" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>
